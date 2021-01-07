@@ -1,0 +1,101 @@
+# operators // divides and rounds down to the nearest INTEGER  ^(caret) bitwise Xor
+# x, y, z = 3, 4, 5
+# sting + combine, * repeat strings, \' for ',str[], len()
+# type(), str(), int(), float(), print()
+# format  for point in zip(labels, x_coord, y_coord, z_coord): points.append("{}: {}, {}, {}".format(*point))
+# split new_str.split(None, 3)
+# string methods: capitalize(),encode, isapha,islower, istitle, casefold, endswith, format_map, isdecimal, isnumeric, isupper, center, expandtabs, index, is digit, isprintable, join, count, find, isalnum, isidentifier, isspace, ljust
+# list[0:len(list)] = list[:]
+# list methods; len(),max/min, sorted,pop() : order, mutable
+# join  '/n'(:enter).join([list]) , append()
+# (tuple) : order, immutable
+# set methods: len(), add, pop(), union, intersection, difference : inorder, mutable
+# {dictionary} , dic[key] = value, get(key) may return None or int @ get(word, 0) return int  : inorder, immutation
+#    item()  for key, value in cast.items():
+#    dict(zip(cast_names, cast_heights))
+
+# Conditional statements  if : elif : else:
+# Loop 1. for i in range(1,5,2): # 1,3,  2. while :
+#    break -terminates the loop,  continue -skips one iteration of a loop
+
+# zip:return a sequence of tuples. list(zip(['a', 'b', 'c'], [1, 2, 3])), zip(*some_list)
+# enumerate for i, letter in enumerate(letters)
+
+# list comprehension: squares = [x**2 if x % 2 == 0 else x + 3 for x in range(9)]
+# Function:  def func(arg1,arg2):  return
+#   lambda func()/ temp func : double = lambda x,y :x*y   double(3,4)
+
+# map(<func>, <data>) apply function to data
+# iterator: object represents a stream of data. Generator (func): way to create iterators using functions.
+#   yield i,j: return i,j in each iteration
+#   Generators are a lazy way to build iterables. They are useful when the fully realized list would not fit in memory, or when the cost to calculate each list element is high and you want to do it as late as possible. But they can only be iterated over once.
+
+##numpy
+#  import numpy as np , np.array([]), .ndim, .shape, dtype, np.zeros((x,y)): init x by y array, np.ones(()),np.full((),z), np.eye(), np.diag([,,]), np.arange() : like range()
+#  np.linspace(start,end,# of some_list,endpoint = T/F), np.reshape(x,(3,4)),np.random.random/normal(),np.delete(x,[0,2],axis = 1) : by col, np.append, np.insert(x,pos,[]), np.vstack, np.hstack
+#  np.copy(): no correlation between original and copied after copy, np.unique(), X[(X > 10) & (X < 17)], np.intersect1d(x,y)), np.setdiff1d(x,y), np.union1d(x,y)
+#  np.add,np.subtract, np.multiply, np.divide, np,median, np.mean, np.std
+
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in X are of type:', X.dtype)
+print('The elements in X have a mean of:', X.mean())
+print('The maximum value in X is:', X.max())
+print('The minimum value in X is:', X.min())
+print('X has', (X < 0).sum(), 'negative numbers')
+print('X has', (X > 0).sum(), 'positive numbers')
+
+
+Function/Method	Description
+numpy.ndarray.dtype	Return the data-type of the elements of the array. Remember, arrays are homogeneous.
+numpy.ndarray.ndim	Return the number of array-dimensions (rank), e.g., it will return 2 for a 4x3 array.
+numpy.ndarray.shape	Return a tuple representing the array dimensions, e.g., it will return (rows,columns) for a rank 2 array.
+numpy.ndarray.size	Return the number of elements present in the array.
+numpy.save	Save an array to .npy (numpy) format.
+numpy.load	Load array from the .npy files.
+numpy.random.random	Return random floats values from the interval [0.0, 1.0), in a specified shape.
+numpy.random.randint	Return random integers from the half-open interval [a, b), in a specified shape.
+numpy.random.normal	Return random samples from a Gaussian (normal) distribution.
+numpy.random.permutation	Return a randomly permuted sequence from the given list
+numpy.reshape
+numpy.ndarray.reshape	Returns an array containing the same elements with a new shape, without affecting the the original array.
+Category: Array Creation
+Function/Method	Description
+numpy.ones	Return a new array of given shape and type, filled with 1s.
+numpy.zeros	Return a new array of given shape and type, filled with 0s.
+numpy.full	Return a new array of given shape and type, filled with a specific value.
+numpy.eye	Return a 2-D array with 1s on the diagonal and 0s elsewhere.
+numpy.diag	Extract the diagonal elements.
+numpy.unique	Return the sorted unique elements of an array.
+numpy.array	Create an n-dimensional array.
+numpy.arange	Return evenly spaced values within a given half-open interval [a, b).
+numpy.linspace	Return evenly spaced numbers over a specified interval [a,b].
+numpy.ndarray.copy	Returns a copy of the array.
+Category: Operating with Elements and Indices
+Function/Method	Description
+numpy.insert	Insert values along the given axis before the specified indices.
+numpy.delete	Return a new array, after deleting sub-arrays along a specified axis.
+numpy.append	Append values at the end of the specified array.
+numpy.hstack	Return a stacked array formed by stacking the given arrays in sequence horizontally (column-wise).
+numpy.vstack	Return a stacked array formed by stacking the given arrays, will be at least 2-D, in sequence vertically (row-wise).
+numpy.sort	Return a sorted copy of an array.
+numpy.ndarray.sort	Sort an array in-place.
+Category: Set Operations
+Function/Method	Description
+numpy.intersect1d	Find the intersection of two arrays.
+numpy.setdiff1d	Find the set difference of two arrays.
+numpy.union1d	Return the unique, sorted array of values that are in either of the two input arrays.
+Category: Arithmetic and Statistical Operations
+Function/Method	Description
+numpy.add	Element-wise add given arrays
+numpy.subtract	Subtract arguments of given arrays, element-wise.
+numpy.multiply	Multiply arguments of given arrays, element-wise.
+numpy.divide	Returns a true division of the inputs, element-wise.
+numpy.exp	Calculate the exponential of all elements in the input array.
+numpy.power	First array elements raised to powers from second array, element-wise.
+numpy.sqrt	Return the non-negative square-root of an array, element-wise.
+numpy.ndarray.min	Return the minimum along the specified axis.
+numpy.ndarray.max	Return the maximum along a given axis.
+numpy.mean
+numpy.ndarray.mean	Compute the arithmetic mean along the specified axis.
+numpy.median	Compute the median along the specified axis.
