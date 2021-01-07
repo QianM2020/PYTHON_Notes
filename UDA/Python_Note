@@ -99,3 +99,57 @@ numpy.ndarray.max	Return the maximum along a given axis.
 numpy.mean
 numpy.ndarray.mean	Compute the arithmetic mean along the specified axis.
 numpy.median	Compute the median along the specified axis.
+
+## pandas import pandas as pd
+Function/Method	Description
+pandas.read_csv(relative_path_to_file)	Reads a comma-separated values (csv) file present at relative_path_to_file and loads it as a DataFrame
+pandas.DataFrame(data)	Returns a 2-D heterogeneous tabular data. Note: There are other optional arguments as well that you can use to create a dataframe.
+pandas.Series(data, index)	Returns 1-D ndarray with axis labels
+pandas.Series.shape
+pandas.DataFrame.shape	Returns a tuple representing the dimensions
+pandas.Series.ndim
+pandas.DataFrame.ndim	Returns the number of the dimensions (rank). It will return 1 in case of a Series
+pandas.Series.size
+pandas.DataFrame.size	Returns the number of elements
+pandas.Series.values	Returns the data available in the Series
+pandas.Series.index	Returns the indexes available in the Series
+pandas.DataFrame.isnull()	Returns a same sized object having True for NaN elements and False otherwise.
+pandas.DataFrame.count(axis)	Returns the count of non-NaN values along the given axis. If axis=0, it will count down the dataframe, meaning column-wise count of non-NaN values.
+pandas.DataFrame.head([n])	Return the first n rows from the dataframe. By default, n=5.
+pandas.DataFrame.tail([n])	Return the last n rows from the dataframe. By default, n=5. Supports negative indexing as well.
+pandas.DataFrame.describe()	Generate the descriptive statistics, such as, count, mean, std deviation, min, and max.
+pandas.DataFrame.min()	Returns the minimum of the values along the given axis.
+pandas.DataFrame.max()	Returns the maximum of the values along the given axis.
+pandas.DataFrame. mean()	Returns the mean of the values along the given axis.
+pandas.DataFrame.corr()	Compute pairwise correlation of columns, excluding NA/null values.
+pandas.DataFrame.rolling(windows)	Provide rolling window calculation, such as pandas.DataFrame.rolling(15).mean() for rolling mean over window size of 15.
+pandas.DataFrame.loc[label]	Access a group of rows and columns by label(s)
+pandas.DataFrame.groupby(mapping_function)	Groups the dataframe using a given mapper function or or by a Series of columns.
+Category: Manipulation
+Function/Method	Description
+pandas.Series.drop(index)	Drops the element positioned at the given index(es)
+pandas.DataFrame.drop(labels)	Drop specified labels (entire columns or rows) from the dataframe.
+pandas.DataFrame.pop(item)	Return the item and drop it from the frame. If not found, then raise a KeyError.
+pandas.DataFrame.insert(location, column, values)	Insert column having given values into DataFrame at specified location.
+pandas.DataFrame.rename(dictionary-like)	Rename label(s) (columns or row-indexes) as mentioned in the dictionary-like
+pandas.DataFrame.set_index(keys)	Set the DataFrame's row-indexes using existing column-values.
+pandas.DataFrame.dropna(axis)	Remove rows (if axis=0) or columns (if axis=1) that contain missing values.
+pandas.DataFrame.fillna(value, method, axis)	Replace NaN values with the specified value along the given axis, and using the given method (‘backfill’, ‘bfill’, ‘pad’, ‘ffill’, None)
+pandas.DataFrame.interpolate(method, axis)	Replace the NaN values with the estimated value calculated using the given method along the given axis.
+
+# pd.Series(data, index) ,pds[['indexes']] : pds.loc[['indexes']], mutate
+#   pds.drop('index',inplace = F/T) : when F, original series remain intact
+
+# pd.dataframe 1.create the dictionary of Pandas Series.2. pass the dictionary to the pd.DataFrame() function.
+#   items = {'Bob' : pd.Series(data = [245, 25, 55], index = ['bike', 'pants', 'watch']),
+         'Alice' : pd.Series(data = [40, 110, 500, 45], index = ['book', 'glasses', 'bike', 'pants'])} # dict
+# col label - dict.key, row lbl - pds.indices
+#  pddf.append(pddf), insert :store_items.insert(4, 'shoes', [8,5,0]), pop(col), drop : store_items.drop(['store 2', 'store 1'], axis = 0)
+#  rename: pddf.rename(columns/index = {'bikes': 'hats'}), fillna(0):store_items.fillna(method = 'backfill', axis = 1) next in row
+#    store_items.interpolate(method = 'linear', axis = 1)
+
+
+data = {'Integers' : [1,2,3],
+        'Floats' : [4.5, 8.2, 9.6]}
+
+df = pd.DataFrame(data, index = ['label 1', 'label 2', 'label 3'])
